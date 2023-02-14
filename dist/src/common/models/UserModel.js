@@ -19,9 +19,6 @@ const SchemaUser = new mongoose_1.Schema({
         type: String,
         require: true
     },
-    _id: {
-        type: String
-    }
 });
 exports.UserModel = (0, mongoose_1.model)('User', SchemaUser);
 //# sourceMappingURL=UserModel.js.map

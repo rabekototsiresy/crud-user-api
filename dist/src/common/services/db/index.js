@@ -7,8 +7,8 @@ exports.dbConnection = void 0;
 const config_1 = require("../../../config");
 const mongoose_1 = __importDefault(require("mongoose"));
 function dbConnection() {
-    const url = `mongodb+srv://${config_1.config.db_user}:${config_1.config.db_pass}@cluster0.n8haibj.mongodb.net/${config_1.config.dbname}?retryWrites=true&w=majority`;
-    mongoose_1.default.connect(url)
+    const uri = `mongodb+srv://${config_1.config.db_user}:${config_1.config.db_pass}@cluster0.n8haibj.mongodb.net/${config_1.config.dbname}?retryWrites=true&w=majority`;
+    mongoose_1.default.connect(uri)
         .then(() => {
         console.log('Mongo : Conected ✔️');
     })

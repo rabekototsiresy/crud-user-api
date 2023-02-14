@@ -8,8 +8,7 @@
 4. afficher un utilisateur
 
 ## Dependencies
-- Node js `>= 16`
-- Angular cli `  >=8`
+- Node js `>= ^16.0.0`
 - Typescript environment
  
 ## Installation
@@ -29,19 +28,6 @@
 
   ----
 
-5. Compilation du projet
-  ```
-  tsc
-  ```
-
-  ----
-
-4. Lancement du projet 
-  ```
-  npm start
-  ```
-
-  ----
 
 ## Configuration
 Configuration variable d'environment `.env`
@@ -58,14 +44,8 @@ Configuration variable d'environment `.env`
 
 
 ## Lancement du projet
-1. Compilation du projet
-  ```
-  tsc
-  ```
 
-  ----
-
-2. Lancement du projet 
+- Lancement du projet 
   ```
   npm start
   ```
