@@ -3,27 +3,39 @@
 
 import { Router } from 'express';
 import { createUser } from './controllers/createUserController';
-import { getUser } from './getUserController';
-
+import { RegisterSchemaJoi } from '../../common/schemasJoi/RegisterSchemaJoi';
+import { validateFormMid } from '../../common/middlewares/validateFormMiddleware';
+import { updateUserById } from './controllers/updateUserByIdController';
+import { getAllUser } from './controllers/getAllUserController';
+import { getUserById } from './controllers/getUserByIdController';
+import { deleteUserById } from './controllers/deleteUserByIdController';
 export const router: Router = Router();
 
-
+ 
 /**
  * get all users
  */
-router.route('/').get(getUser);
-
-
-/**
- * update one fivondronana by id
-//  */
-// router.route('/:id').put(pass.authenticate('jwt',{session: false}),validateFormMid(FivSchemaJoi),updateFivController);
+router.route('/').get(getAllUser);
 
 /**
- * remove one fivondornana by id
+ * get one specific user by id
  */
+router.route('/:id').get(getUserById);
 
 /**
- * get one fivondronana by id
+ * create user
  */
-router.route('/').get(createUser);
+router.route('/').post(validateFormMid(RegisterSchemaJoi),createUser);
+
+/**
+ * create user
+ */
+router.route('/:id').put(validateFormMid(RegisterSchemaJoi),updateUserById);
+
+/**
+ * remove user by id
+ */
+router.route('/:id').delete(deleteUserById);
+
+
+

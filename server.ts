@@ -6,7 +6,7 @@ import path from 'path';
 
 const app = express();
 dotenv.config();
-const port = process.env.PORT;
+const port = process.env.PORT || 9090;
 
 
 
@@ -28,7 +28,7 @@ app.use('/api/v1',router)
  * starting server
  */
 app.listen(port,()=>{
-    console.log('server running'+port)
+    console.log('server running '+port)
 })
 
 
