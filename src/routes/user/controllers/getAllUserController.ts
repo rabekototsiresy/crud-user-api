@@ -1,22 +1,14 @@
-import { IResponse } from 'common/interfaces/IResponse';
+import { IResponse } from '../../../common/interfaces/IResponse';
+import { UserModel } from '../../../common/models/UserModel';
 import { Request,Response } from 'express';
 export const getAllUser = async(req: Request, res: Response)=>{
     try {
-        // const musics:any = await MusicModel.findAll({
-        //     include: [
-        //         {
-        //             model: FivondronanaModel,
-        //             //as: 'fivList'
-        //             attributes: ['name','rang']
-        //         }
-        //     ]
-        // });
-
+        const users = await UserModel.find();
         return res.status(201).json({
-            message: 'lisitry hira rehetra',
+            message: 'list all user',
             code: 201,
             success: true,
-            data: "musics list"
+            data: users
         })
     } catch (error) {
         return res.status(500).json({

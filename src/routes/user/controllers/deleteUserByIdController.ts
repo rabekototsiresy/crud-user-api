@@ -1,16 +1,14 @@
+import { UserClass } from '../../../common/classes/UserClass';
+import { UserModel } from '../../../common/models/UserModel';
 import { Request,Response } from 'express';
 import { IResponse } from '../../../common/interfaces/IResponse';
 export const deleteUserById = async (req: Request,res: Response)=>{
     try {
         const { id } = req.params;
         if(id){
-            //const music: any = await MusicModel.findByPk(id);
-            let user
+            const user = await UserModel.findById(id);
             if(user){
-
-            
-                // deleteMusicFile(music.audio)
-                // music.destroy();
+                await user.delete();
                 return res.status(200).json({
                     message: `user removed successfully : ${id}`,
                     code: 200,

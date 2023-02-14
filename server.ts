@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { router } from './src/routes/router';
 import path from 'path';
+import { dbConnection } from './src/common/services/db';
 
 const app = express();
 dotenv.config();
@@ -17,6 +18,12 @@ const port = process.env.PORT || 9090;
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cors({origin: '*'}))
+
+/**
+ * database connection
+ */
+dbConnection();
+
 
 /**
  * match all routes

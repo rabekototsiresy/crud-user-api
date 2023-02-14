@@ -11,7 +11,7 @@ export const validateFormMid = (schema: Schema)=>{
     return (req: Request, res: Response,next: NextFunction)=>{
         const result: ValidationResult = schema.validate(req.body);
         if(!(result.error)){
-            req.body.value = result.value;
+            //req.body.value = result.value;
             return next();
         }
         const { details }  = result.error;

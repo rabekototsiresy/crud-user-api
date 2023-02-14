@@ -1,17 +1,17 @@
-import { IResponse } from 'common/interfaces/IResponse';
+import { IResponse } from '../../../common/interfaces/IResponse';
+import { UserModel } from '../../../common/models/UserModel';
 import { Request,Response } from 'express';
 export const getUserById = async(req: any, res: Response)=>{
     try {
         const { id } = req.params;
         if(id){
-            //const music: any = await MusicModel.findByPk(id);
-            var user
+            const user = await UserModel.findById(id);
             if(user){
                 return res.status(200).json({
                     message: `user id : ${id}`,
                     code: 200,
                     success: true,
-                    data:'user'
+                    data: user
                 } as IResponse)
             }else{
                 return res.status(404).json({

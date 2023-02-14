@@ -1,21 +1,14 @@
-//import {Sequelize } from 'sequelize';
-import { dbConfig } from '../../../config/dbConfig';
+import { config } from '../../../config';
+import mongoose from 'mongoose';
 
-var Sequelize
-const sequelize = new Sequelize(dbConfig.DB_NAME,dbConfig.USER,dbConfig.PASSWORD,{
-    host: dbConfig.HOST,
-    dialect: 'mysql',
-    pool: {
-        max: 5 ,
-        min: 0,
-        acquire: 30000,
-        idle: 10000
-    } 
-})
-
-
-export const db  = {
-    db: sequelize,
-    Sequelize: Sequelize
+export function dbConnection() {
+    const url = `mongodb+srv://${config.db_user}:${config.db_pass}@cluster0.n8haibj.mongodb.net/${config.dbname}?retryWrites=true&w=majority`;
+    mongoose.connect(url)
+        .then(() => {
+            console.log('Mongo : Conected ✔️');
+        })
+        .catch((err) => {
+            console.log('Mongo : Not connected ️❌️');
+            throw err;
+        });
 }
-
