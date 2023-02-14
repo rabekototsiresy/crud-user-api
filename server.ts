@@ -13,9 +13,7 @@ const port = process.env.PORT;
 /**
  * database connection
  */
-// db.authenticate().then(()=>console.log('► db connected .....☪☻'))
-//                     .catch(e=>console.log(e))
-//.sync({alter: true}).then(()=>console.log("databese created ....")).catch((e=>console.log(e)));
+
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cors({origin: '*'}))
