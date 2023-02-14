@@ -16,7 +16,6 @@ export const updateUserById = async (req: Request,res: Response)=>{
                 success: true,
                 data: user
             } as IResponse)
-
         } else {
             return res.status(404).json({
                 message: `user not found: ${id}`,

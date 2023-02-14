@@ -2,6 +2,7 @@ import { UserClass } from '../../../common/classes/UserClass';
 import { UserModel } from '../../../common/models/UserModel';
 import { Request,Response } from 'express';
 import { IResponse } from '../../../common/interfaces/IResponse';
+
 export const deleteUserById = async (req: Request,res: Response)=>{
     try {
         const { id } = req.params;
@@ -21,7 +22,6 @@ export const deleteUserById = async (req: Request,res: Response)=>{
                     success: false
                 } as IResponse);
             }
-            
         }else{
             return res.status(404).json({
                 message: `id not defined`,

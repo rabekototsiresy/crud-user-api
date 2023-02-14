@@ -20,7 +20,6 @@ export const getUserById = async(req: any, res: Response)=>{
                     success: false
                 } as IResponse)
             }
-            
         }else{
             return res.status(404).json({
                 message: `id not defined`,

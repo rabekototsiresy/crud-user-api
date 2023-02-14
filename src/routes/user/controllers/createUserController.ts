@@ -3,6 +3,7 @@ import { IUser } from '../../../common/interfaces/IUser';
 import { UserModel } from '../../../common/models/UserModel';
 import { Request,Response } from 'express';
 import { IResponse } from '../../../common/interfaces/IResponse';
+
 export const createUser = async (req: Request,res: Response)=>{
     try {
         const { firstName, lastName, username, password}  = req.body;
