@@ -20,6 +20,7 @@ export const createUser = async (req: Request,res: Response)=>{
             data: userCreatd
         } as IResponse)
     } catch (error) {
+        console.log(error,'error')
         return res.status(500).json({
             message: 'server error occurred',
             code: 500,
