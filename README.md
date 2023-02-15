@@ -19,7 +19,7 @@
 
   ----
 
-2. Deplacer dans le dossier
+2. Deplacer dans le dossier `cd crud-user-api`
 
 3. Installation des dependances
   ```
@@ -30,8 +30,8 @@
 
 
 ## Configuration
-Configuration variable d'environment `.env`
-> Renommer le fichier .env.example en .env
+  Configuration variable d'environment `.env`
+  > Renommer le fichier .env.example en .env
  
   ```
   PORT = "2021" `default`
