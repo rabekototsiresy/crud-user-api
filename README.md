@@ -31,6 +31,7 @@
 
 ## Configuration
 Configuration variable d'environment `.env`
+> Renommer le fichier .env.example en .env
  
   ```
   PORT = "2021" `default`
